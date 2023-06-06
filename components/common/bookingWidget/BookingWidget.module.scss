@@ -1,0 +1,166 @@
+.booking-wiget {
+  height: 237px;
+  background-color: var(--secondary-color);
+  max-width: var(--max-width);
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+  transform: translateY(50%);
+
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 20px 0px;
+
+  &__tabs {
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+  }
+
+  &__tab {
+    padding: 20px 30px;
+    position: relative;
+    cursor: pointer;
+    color: var(--inactive-color);
+    font-size: 0.875rem;
+
+    svg {
+      fill: var(--inactive-color);
+      margin-inline-end: 7px;
+    }
+
+    &--active {
+      color: var(--text-dark-color);
+
+      svg {
+        fill: var(--primary-color);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+    }
+  }
+
+  .flight-booking {
+    padding: 30px;
+
+    &__filters {
+      display: flex;
+    }
+
+    &__select {
+      border: 1px solid var(--border-color);
+      padding: 10px 20px;
+      margin-inline-end: 10px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+
+      select {
+        cursor: pointer;
+        color: var(--text-color);
+        font-weight: 400;
+        font-family: inherit;
+        appearance: none;
+        border-color: transparent;
+        outline: none;
+        margin-inline-end: 5px;
+      }
+
+      svg {
+        stroke: var(--text-color);
+      }
+    }
+
+    &__fields {
+      display: flex;
+      margin-top: 20px;
+
+      .booking-input {
+        display: flex;
+        flex-direction: column;
+
+        &--lg {
+          input {
+            width: 140px !important;
+          }
+        }
+
+        label {
+          font-size: 0.875rem;
+          color: var(--text-dark-color);
+          margin-bottom: 12px;
+        }
+
+        &__icon-input {
+          display: flex;
+          justify-content: baseline;
+
+          i {
+            margin-inline-end: 12.4px;
+          }
+
+          input {
+            border-width: 0;
+            color: var(--text-color);
+            outline: none;
+            font-size: 0.875rem;
+            font-family: inherit;
+            width: 100px;
+
+            &::placeholder {
+              color: var(--text-light-color);
+            }
+
+            &[type="date"]::-webkit-inner-spin-button,
+            &[type="date"]::-webkit-calendar-picker-indicator {
+              display: none;
+              -webkit-appearance: none;
+            }
+
+            &::-webkit-datetime-edit {
+              color: var(--text-light-color);
+            }
+          }
+        }
+      }
+    }
+
+    &__field-group {
+      display: flex;
+      gap: 25px;
+      border-inline-end: 1px solid var(--border-color);
+      padding-inline-end: 30px;
+      padding-inline-start: 30px;
+
+      &:first-child {
+        padding-inline-start: 0;
+      }
+
+      &:last-child {
+        border-width: 0;
+      }
+    }
+
+    &__switch-btn {
+      background: transparent;
+      border-width: 0;
+      cursor: pointer;
+      margin-inline-end: 5px;
+    }
+
+    &__form {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &__search-btn {
+      svg {
+        margin-inline-end: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.stats-section {
+  min-height: 580px;
+  background-image: url("../../../public/images/third-section-bg.png");
+  &__content {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 80px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__desc {
+    max-width: 565px;
+    h2 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--text-dark-color);
+      line-height: 54px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: var(--text-color);
+      margin-bottom: 30px;
+      line-height: 28px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      li{
+        position: relative;
+        flex: 1;
+         &::after{
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 1px;
+          height: 40px;
+          color: var(--border-color);
+         }
+      }
+
+      h6 {
+        font-size: 1.875rem;
+        line-height: 28px;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 0.813rem;
+        line-height: 20px;
+        font-weight: 300;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.best-places-section {
+  min-height: 480px;
+  background-image: url("../../../public/images/fourth-section-bg.png");
+  background-size: cover;
+
+  &__content {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    padding: 80px 0 75px;
+
+    &-right {
+      flex: 2;
+      h2 {
+        font-size: 2.75rem;
+        font-weight: 600;
+        margin-top: 50px;
+        line-height: 54px;
+        color: var(--text-dark-color);
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 1.125rem;
+        font-weight: 300;
+        max-width: 470px;
+        margin-bottom: 30px;
+        line-height: 28px;
+        color: var(--text-color);
+      }
+    }
+
+    &-left {
+      flex: 3;
+    }
+  }
+
+  &__cta-icon {
+    height: 28px;
+    width: 28px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline-start: 10px;
+  }
+}

@@ -1,0 +1,53 @@
+.header {
+  height: 100px;
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  nav {
+    color: var(--secondary-color);
+    a {
+      padding: 0 15px;
+      font-weight: 400;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__language-switcher {
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    margin-inline-end: 15px;
+    &-globe {
+      margin-inline-end: 5.6px;
+      stroke: var(--secondary-color);
+    }
+    &-cheveron {
+      margin-inline-start: 12px;
+      stroke: var(--secondary-color);
+    }
+  }
+
+  &--white {
+    nav {
+      color: var(--text-color);
+    }
+
+    .header__language-switcher {
+      color: var(--text-color);
+      svg {
+        stroke: var(--text-color);
+      }
+    }
+  }
+
+  &__register-btn {
+    margin-inline-end: 10px;
+  }
+}

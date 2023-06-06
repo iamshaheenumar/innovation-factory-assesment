@@ -1,0 +1,81 @@
+.register-section {
+  padding: 0 127px;
+  background-image: url("../../../public/images/login-bg.png");
+  background-size: cover;
+  min-height: calc(100vh - 350px);
+  padding: 70px 0;
+
+  &__card {
+    width: 568px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 533px;
+    padding: 40px 70px;
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 29px;
+      text-align: center;
+      color: var(--primary-color);
+    }
+
+    form {
+      width: 100%;
+      margin: 30px 0;
+    }
+  }
+
+  &__submit-btn {
+    margin: auto;
+    padding: 11.5px 31px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__other {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    a {
+      font-weight: 300;
+      font-size: 0.813rem;
+      color: var(--primary-color);
+    }
+  }
+
+  &__agree-terms{
+    display: flex;
+    align-items: center;
+    input[type="checkbox"] {
+      height: 16px;
+      width: 16px;
+      margin-inline-end: 14px;
+      accent-color: var(--primary-color);
+    }
+
+    label {
+      font-weight: 300;
+      font-size: 0.813rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &__desc {
+    text-align: center;
+    color: var(--text-light-color);
+    text-transform: capitalize;
+    font-size: 0.875rem;
+
+    a {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.footer {
+  &__up {
+    background-image: url("../../../public/images/footer-up-bg.png");
+    height: 143px;
+  }
+
+  &__content {
+    max-width: var(--max-width);
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+
+    &-left {
+      flex: 1;
+      h3 {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 34px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-weight: 400;
+      }
+    }
+
+    &-right {
+      flex: 1;
+    }
+  }
+
+  .help-email {
+    margin-inline-start: 40px;
+    width: 416px;
+    height: 64px;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--secondary-color);
+    display: flex;
+    overflow: hidden;
+    padding: 5px;
+
+    input {
+      flex: 1;
+      border-width: 0;
+      outline: none;
+      padding: 10px 30px;
+      color: var(--text-color);
+      font-size: 1rem;
+      font-family: inherit;
+
+      &::placeholder {
+        color: var(--text-light-color);
+      }
+    }
+
+    button {
+      background-color: var(--primary-color);
+      border-radius: var(--border-radius-lg);
+      border-width: 0;
+      height: 54px;
+      width: 78px;
+      cursor: pointer;
+    }
+  }
+
+  &__low {
+    min-height: 107px;
+    background: url("../../../public/images/footer-down-bg.png");
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-content {
+      max-width: var(--max-width);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 70px;
+
+      nav {
+        color: var(--text-color);
+        a {
+          padding: 0 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__social-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+
+    li {
+      background-color: var(--secondary-color);
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      a {
+        line-height: 0;
+      }
+    }
+  }
+
+  &__copyright{
+    a{
+      color: var(--primary-color);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.bread-crumbs {
+    display: flex;
+    list-style: none;
+
+    li {
+        color: var(--secondary-color);
+        padding: 0 20px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -2.5px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+
+        &:last-child {
+            font-weight: 500;
+            &::after {
+                content: none;
+            }
+        }
+    }
+}
