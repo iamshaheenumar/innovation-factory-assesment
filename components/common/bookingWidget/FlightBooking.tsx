@@ -49,7 +49,7 @@ const FlightBooking = () => {
                     onChange={handleTripTypeChange}
                 />
             </div>
-            <form className={styles["flight-booking__form"]}>
+            <form className={styles["flight-booking__form"]} onSubmit={handleFlightSearch}>
                 <div className={styles["flight-booking__fields"]}>
                     <div className={styles["flight-booking__field-group"]}>
                         <BookingInput
@@ -59,7 +59,7 @@ const FlightBooking = () => {
                             placeholder="Dubai (DXB)"
                         />
 
-                        <button className={styles["flight-booking__switch-btn"]}>
+                        <button type="button" className={styles["flight-booking__switch-btn"]}>
                             <SwitchIcon />
                         </button>
 
@@ -101,10 +101,10 @@ const FlightBooking = () => {
                 </div>
 
                 <Button
-                    onClick={handleFlightSearch}
                     className={styles["flight-booking__search-btn"]}
                     variant="primary"
                     size="lg"
+                    type="submit"
                 >
                     <SearchIcon />
                     Search
