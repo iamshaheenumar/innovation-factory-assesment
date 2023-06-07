@@ -1,0 +1,25 @@
+.side-card {
+    background: var(--secondary-color);
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    min-height: 100px;
+    overflow: hidden;
+
+    &__header {
+        background-color: var(--primary-color);
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        color: var(--secondary-color);
+
+        h2 {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+    }
+
+    &__body{
+        padding: 25px 30px;
+    }
+}

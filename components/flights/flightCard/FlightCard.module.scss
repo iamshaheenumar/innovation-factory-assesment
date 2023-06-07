@@ -1,0 +1,205 @@
+.flight-card {
+  min-height: 200px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.07);
+  padding: 30px;
+  width: 100%;
+  background-color: var(--secondary-color);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    border-radius: 50%;
+    box-shadow: 0px 15px 20px rgba(26, 151, 212, 0.2);
+    margin-inline-end: 12px;
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+
+    h6 {
+      font-weight: 500;
+      color: var(--text-dark-color);
+      font-size: 1rem;
+    }
+  }
+
+  &__rate {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.375rem;
+    @media only screen and (max-width: 767px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__second {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    gap: 30px;
+    border-bottom: 1px solid var(--border-color);
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      gap: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  &__details {
+    padding-inline-start: 55px;
+    flex: 1;
+    @media only screen and (max-width: 767px) {
+      padding-inline-start: 0;
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+
+  &__route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-weight: 600;
+      color: var(--text-dark-color);
+      font-size: 0.875rem;
+
+      &:first-child {
+        margin-inline-end: 20px;
+      }
+
+      &:last-child {
+        margin-inline-start: 20px;
+      }
+    }
+
+    .route-direction {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      position: relative;
+
+      svg {
+        fill: var(--primary-color);
+        z-index: 2;
+        position: absolute;
+        left: 50%;
+        top: calc(50% - 0.5px);
+        transform: translate(-50%, -50%);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        top: calc(50% - 1px);
+        border-top: 2px dashed var(--border-color);
+      }
+
+      .stop {
+        height: 12px;
+        width: 12px;
+        border: 1px solid var(--primary-color);
+        border-radius: 50%;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: var(--primary-color);
+          border-radius: 50%;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  &__time {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    .departure,
+    .arrival {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.875rem;
+      margin: 0;
+      line-height: 25px;
+    }
+
+    .duration {
+      font-size: 0.75rem;
+      color: var(--text-dark-color);
+
+      i {
+        font-style: normal;
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 0;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    ul.features {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+
+      li {
+        padding: 6px 14px;
+        border: 1px solid var(--border-color);
+        background-color: var(--light-color);
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 0.875rem;
+
+        svg {
+          fill: var(--primary-color);
+        }
+      }
+    }
+
+    .expand {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--primary-color);
+      font-size: 0.75rem;
+      cursor: pointer;
+
+      svg {
+        stroke: var(--primary-color);
+      }
+    }
+  }
+}

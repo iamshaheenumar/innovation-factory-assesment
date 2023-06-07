@@ -1,0 +1,17 @@
+.checkbox{
+    display: flex;
+    align-items: center;
+    input[type="checkbox"] {
+        height: 16px;
+        width: 16px;
+        margin-inline-end: 14px;
+        accent-color: var(--primary-color);
+        outline: 1px solid var(--border-color);;
+      }
+  
+      label {
+        font-weight: 300;
+        font-size: 1rem;
+        text-transform: capitalize;
+      }
+}

@@ -2,6 +2,10 @@
   display: flex;
   gap: 10px;
 
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+
   &__item {
     font-size: 0.75rem;
     border-radius: var(--border-radius);

@@ -4,10 +4,10 @@ import styles from "./FilterTabs.module.scss"
 interface FilterTabProps {
     data: {
         label: string;
-        key: string
+        key: string | number;
     }[];
-    onChange: (type: string) => void;
-    activeTab: string
+    onChange: (type: string | number) => void;
+    activeTab: string | number
 }
 
 const FilterTabs = ({ data, onChange, activeTab }: FilterTabProps) => {

@@ -1,6 +1,7 @@
 .stats-section {
   min-height: 580px;
   background-image: url("../../../public/images/third-section-bg.png");
+  background-size: 100%;
   &__content {
     max-width: var(--max-width);
     margin: auto;

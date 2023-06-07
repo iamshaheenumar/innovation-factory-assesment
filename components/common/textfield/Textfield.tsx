@@ -6,12 +6,13 @@ interface TextfieldProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     ref: any
     error?: string
+    small?: boolean
 }
 
-const Textfield = React.forwardRef<HTMLInputElement, TextfieldProps>(({ label, error, ...restProps }, ref) => {
+const Textfield = React.forwardRef<HTMLInputElement, TextfieldProps>(({ label, error, small, ...restProps }, ref) => {
     return (
         <div className={styles.textfield}>
-            <label htmlFor="">{label}</label>
+            <label className={small ? styles.small : ""} htmlFor="">{label}</label>
             <input  {...restProps} ref={ref} />
             {error && <span className={styles["textfield__error-text"]}>{error}</span>}
         </div>

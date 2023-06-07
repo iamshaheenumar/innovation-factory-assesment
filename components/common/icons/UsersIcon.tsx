@@ -1,4 +1,6 @@
-const UsersIcon = () => {
+import { IconProps } from "@/interfaces/interface.common";
+
+const UsersIcon = (props: IconProps) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const UsersIcon = () => {
             height="20"
             fill="none"
             viewBox="0 0 22 20"
+            {...props}
         >
             <path
                 fill="#1A97D4"

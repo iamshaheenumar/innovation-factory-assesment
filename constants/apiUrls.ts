@@ -1,6 +1,7 @@
 enum API_URLS {
     REGISTER = "/register",
-    LOGIN = "/login"
+    LOGIN = "/login",
+    FLIGHTS = "/flights",
 }
 
-export default API_URLS
+export default API_URLS;

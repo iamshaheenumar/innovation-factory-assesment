@@ -1,4 +1,6 @@
-const CalenderIcon = () => {
+import { IconProps } from "@/interfaces/interface.common";
+
+const CalenderIcon = (props: IconProps) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const CalenderIcon = () => {
             height="16"
             fill="none"
             viewBox="0 0 15 16"
+            {...props}
         >
             <path
                 fill="#1A97D4"

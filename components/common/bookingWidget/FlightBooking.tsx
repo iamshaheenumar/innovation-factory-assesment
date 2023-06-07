@@ -11,6 +11,8 @@ import UsersIcon from "../icons/UsersIcon";
 import Button from "../button/Button";
 import SearchIcon from "../icons/Search";
 import { useRouter } from "next/router";
+import { CITIES } from "@/constants/common";
+import { toast } from "react-hot-toast";
 
 const TRIP_TYPES = {
     oneway: "oneway",
@@ -23,15 +25,49 @@ const FLIGHT_BOOKING_FILTERS = [
 ];
 
 const FlightBooking = () => {
-    const [tripType, setTripType] = useState(TRIP_TYPES.oneway);
+    const [tripType, setTripType] = useState(TRIP_TYPES.round);
+    const [origin, setOrigin] = useState("");
+    const [destination, setDestination] = useState("");
+    const [departureDate, setDepartureDate] = useState("");
+    const [returnDate, setReturnDate] = useState("");
+    const [passengers, setPassengers] = useState({ adults: 1, childs: 0, infants: 0 });
+
     const router = useRouter();
 
     const handleTripTypeChange = (type: string) => setTripType(type);
 
     const handleFlightSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        router.push("/flights");
+
+        if (!origin || !destination || !departureDate) {
+            toast.error("Please fill all details.");
+            return false;
+        }
+
+        router.push({
+            pathname: "/flights",
+            query: {
+                tripType,
+                origin,
+                destination,
+                departureDate,
+                ...(tripType === TRIP_TYPES.round && { returnDate }),
+                ...passengers
+            }
+        }).then(() => router.reload());
     };
+
+    const handleCitySwitch = () => {
+
+        if (!origin || !destination) {
+            toast.error("Please choose both Flying from and Flying to.")
+            return false;
+        }
+        const originCopy = origin;
+        setOrigin(destination);
+        setDestination(originCopy);
+    }
+
     return (
         <div className={styles["flight-booking"]}>
             <div className={styles["flight-booking__filters"]}>
@@ -52,50 +88,60 @@ const FlightBooking = () => {
             <form className={styles["flight-booking__form"]} onSubmit={handleFlightSearch}>
                 <div className={styles["flight-booking__fields"]}>
                     <div className={styles["flight-booking__field-group"]}>
-                        <BookingInput
+                        <BookingInput.Autocomplete
                             id="flight-from"
+                            name="origin"
                             label="Flying from"
                             icon={<FlightUp />}
                             placeholder="Dubai (DXB)"
+                            options={CITIES.map(({ name, code }) => ({ label: `${name} (${code.toUpperCase()})`, value: code }))}
+                            onOptionSelect={(val) => typeof val === "string" && setOrigin(val)}
+                            selectedVal={origin}
                         />
 
-                        <button type="button" className={styles["flight-booking__switch-btn"]}>
+                        <button onClick={handleCitySwitch} type="button" className={styles["flight-booking__switch-btn"]}>
                             <SwitchIcon />
                         </button>
 
-                        <BookingInput
+                        <BookingInput.Autocomplete
                             id="flight-to"
                             label="Flying to"
                             icon={<FlightDown />}
                             placeholder="Sharjah (SHJ)"
+                            options={CITIES.map(({ name, code }) => ({ label: `${name} (${code.toUpperCase()})`, value: code }))}
+                            onOptionSelect={(val) => typeof val === "string" && setDestination(val)}
+                            selectedVal={destination}
                         />
                     </div>
 
                     <div className={styles["flight-booking__field-group"]}>
-                        <BookingInput
+                        <BookingInput.DatePicker
                             id="departure"
                             label="Departure"
                             icon={<CalenderIcon />}
                             placeholder="18 Apr 2023"
                             type="date"
+                            onOptionSelect={(val) => typeof val === "string" && setDepartureDate(val)}
                         />
-
-                        <BookingInput
-                            id="return"
-                            label="Return"
-                            icon={<CalenderIcon />}
-                            placeholder="18 Apr 2023"
-                            type="date"
-                        />
+                        {tripType === TRIP_TYPES.round &&
+                            <BookingInput.DatePicker
+                                id="return"
+                                label="Return"
+                                icon={<CalenderIcon />}
+                                placeholder="18 Apr 2023"
+                                type="date"
+                                onOptionSelect={(val) => typeof val === "string" && setReturnDate(val)}
+                            />}
                     </div>
 
                     <div className={styles["flight-booking__field-group"]}>
-                        <BookingInput
+                        <BookingInput.Travellers
                             lg
                             id="travellers"
                             label="Travelers"
                             icon={<UsersIcon />}
                             placeholder="2 Adults, 3 Children"
+                            onOptionSelect={(val) => typeof val !== "string" && setPassengers(val)}
                         />
                     </div>
                 </div>

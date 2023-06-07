@@ -1,0 +1,106 @@
+.passenger-form {
+  max-width: var(--max-width);
+  margin: 60px auto 0;
+  display: flex;
+  gap: 30px;
+
+  .left {
+    flex: 2;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 13px;
+  }
+
+  .price {
+    list-style: none;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      span {
+        font-weight: 300;
+      }
+
+      b {
+        font-weight: 500;
+      }
+
+      &:last-child {
+        font-size: 1.375rem;
+
+        span,
+        b {
+          font-weight: 600;
+        }
+
+        b {
+          color: var(--primary-color);
+        }
+
+        margin-bottom: 0;
+        padding-top: 15px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background-color: var(--border-color);
+        }
+      }
+    }
+  }
+
+  .baggage {
+    list-style: none;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 300;
+      align-items: center;
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      svg {
+        fill: var(--primary-color);
+        margin-inline-end: 10px;
+      }
+    }
+  }
+
+  .flight-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h6{
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    img {
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+      box-shadow: 0px 15px 20px rgba(26, 151, 212, 0.2);
+    }
+  }
+}
