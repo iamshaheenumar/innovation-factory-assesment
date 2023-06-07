@@ -34,7 +34,7 @@ const FlightBooking = () => {
 
     const router = useRouter();
 
-    const handleTripTypeChange = (type: string) => setTripType(type);
+    const handleTripTypeChange = (type: any) => setTripType(type);
 
     const handleFlightSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
